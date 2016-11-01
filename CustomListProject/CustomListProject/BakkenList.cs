@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace CustomListProject
 {
-    public class Program
+    public class BakkenList<T>
     {
-        static void Main(string[] args)
-        {
-        }
+        T[] primeArray = new T[0];
     }
 }
