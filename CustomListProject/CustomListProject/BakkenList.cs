@@ -27,22 +27,52 @@ namespace CustomListProject
             count++;
             primeArray = freshArray;
         }
-        //public int GetIndex(T item)
-        //{
-        //    int index = 0;
-        //    for (int i = 0; i < count; i++)
-        //    {
-                
-        //        return index;
-        //    }
-        //}
+        public int GetIndex(T item)
+        {
+            int index = -1;
+            for (int i = 0; i < count; i++)
+            {
+                if (primeArray[i].Equals(item))
+                {
+                    return i;
+                }                
+            }
+            return index;
+        }
         public void RemoveAt(int index)
         {
-
+            T[] freshArray = new T[count + capacity];
+            int itemRemoved = 0;
+            for (int i = 0; i < count; i++)
+            {
+                if (i != index)
+                {
+                    freshArray[i - itemRemoved] = primeArray[i];
+                }
+                else
+                {
+                    itemRemoved++;
+                }
+            }
+            primeArray = freshArray;
+            count -= itemRemoved;
         }
-        public void Remove()
+        public void Remove(T item)
         {
-            T[] birthArray = new T[count + capacity];
+            T[] freshArray = new T[count + capacity];
+            int index = GetIndex(item);
+            while (index >= 0)
+            {
+                if (index == GetIndex(item))
+                {
+                    RemoveAt(index);
+                }
+                index = GetIndex(item);
+            }
+        }
+        public int Count()
+        {
+            return count;
         }
         public override string ToString()
         {
@@ -55,7 +85,11 @@ namespace CustomListProject
 
         public IEnumerator GetEnumerator()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < count; i++)
+            {
+                yield return primeArray[i];
+            }
+            yield return "End of List";
         }
     }
 }

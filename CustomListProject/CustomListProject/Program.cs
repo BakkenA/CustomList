@@ -10,6 +10,15 @@ namespace CustomListProject
     {
         static void Main(string[] args)
         {
+            Controller visualizer = new Controller();
+            visualizer.CheckFunctionality();
+            visualizer.CheckList();
+            visualizer.ReportIndex();
+            visualizer.ModifyList();
+            visualizer.CheckList();
+            visualizer.RemoveMany();
+            visualizer.CheckList();
+            visualizer.CheckIteration();
         }
     }
 }
