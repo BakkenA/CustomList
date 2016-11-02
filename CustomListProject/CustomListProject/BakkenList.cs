@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,25 +7,55 @@ using System.Threading.Tasks;
 
 namespace CustomListProject
 {
-    public class BakkenList<T>
+    public class BakkenList<T> : IEnumerable
     {
-        T[] primeArray;
-        int capacity = 4;
-        int count = 0; 
+        public T[] primeArray;
+        public int capacity = 4;
+        public int count = 0; 
         public BakkenList()
         {
            T[] primeArray = new T[capacity];
         }
-        public void Add(T newbie)
+        public void Add(T item)
         {
-            T[] birthArray = new T[count+capacity];
+            T[] freshArray = new T[count+capacity];
             for (int i = 0; i < count; i++)
             {
-                birthArray[i] = primeArray[i];
+                freshArray[i] = primeArray[i];
             }
-            birthArray[count] = newbie;
+            freshArray[count] = item;
             count++;
-            primeArray = birthArray;
+            primeArray = freshArray;
+        }
+        //public int GetIndex(T item)
+        //{
+        //    int index = 0;
+        //    for (int i = 0; i < count; i++)
+        //    {
+                
+        //        return index;
+        //    }
+        //}
+        public void RemoveAt(int index)
+        {
+
+        }
+        public void Remove()
+        {
+            T[] birthArray = new T[count + capacity];
+        }
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+        public void Zipper()
+        {
+
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }

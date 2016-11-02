@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CustomListProject;
 
 namespace UnitTestCustomList
 {
@@ -9,7 +10,10 @@ namespace UnitTestCustomList
         [TestMethod]
         public void ExpandArray()
         {
-            
+            BakkenList<string> bakkensList = new BakkenList<string>();
+            string[] testArray = new string[] {"Fox"};
+            bakkensList.Add("Fox");
+            Assert.AreEqual(1, bakkensList.count);
         }
     }
 }
