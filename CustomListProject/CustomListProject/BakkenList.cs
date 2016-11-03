@@ -12,11 +12,13 @@ namespace CustomListProject
         public StringBuilder myStringBuilder = new StringBuilder("This list contains: ");
         public T[] primeArray;
         public int capacity = 4;
-        public int count = 0; 
+        public int count = 0;
+
         public BakkenList()
         {
            T[] primeArray = new T[capacity];
         }
+
         public void Add(T item)
         {
             T[] freshArray = new T[count+capacity];
@@ -84,6 +86,17 @@ namespace CustomListProject
             }
             return myStringBuilder.ToString();
         }//Ask an instructor about this.
+        public static BakkenList<T> operator +(BakkenList<T> a1, BakkenList<T> a2)
+        {
+            BakkenList<T> comboArray = new BakkenList<T>();
+            return new BakkenList<T>();
+        }
+        public static BakkenList<T> operator -(BakkenList<T> a1, BakkenList<T> a2)
+        {
+            BakkenList<T> smallerArray = new BakkenList<T>();
+            
+            return new BakkenList<T>();
+        }
         public void Zipper()
         {
 
