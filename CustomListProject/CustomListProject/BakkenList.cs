@@ -9,6 +9,7 @@ namespace CustomListProject
 {
     public class BakkenList<T> : IEnumerable
     {
+        public StringBuilder myStringBuilder = new StringBuilder("This list contains: ");
         public T[] primeArray;
         public int capacity = 4;
         public int count = 0; 
@@ -25,6 +26,7 @@ namespace CustomListProject
             }
             freshArray[count] = item;
             count++;
+            capacity = count;
             primeArray = freshArray;
         }
         public int GetIndex(T item)
@@ -76,8 +78,12 @@ namespace CustomListProject
         }
         public override string ToString()
         {
-            return base.ToString();
-        }
+            foreach (T item in primeArray)
+            {
+                myStringBuilder.AppendFormat("{0:C} ",item);
+            }
+            return myStringBuilder.ToString();
+        }//Ask an instructor about this.
         public void Zipper()
         {
 

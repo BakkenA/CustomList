@@ -9,6 +9,7 @@ namespace CustomListProject
     public class Controller
     {
         BakkenList<string> adamsList = new BakkenList<string>();
+        BakkenList<double> otherList = new BakkenList<double>();
 
         public void CheckFunctionality()
         {
@@ -50,9 +51,39 @@ namespace CustomListProject
         {
             adamsList.Remove("Hawk");
         }
+        public void SeeCount()
+        {
+            Console.WriteLine(adamsList.Count());
+            Console.ReadLine();
+        }
         public void CheckIteration()
         {
-            adamsList.GetEnumerator();
+            foreach (string thing in adamsList)
+            {
+                Console.WriteLine(thing);
+            }
+            Console.ReadLine();
+        }
+        public void Hold()
+        {
+            Console.ReadLine();
+        }
+        public void ShowStrings()
+        {
+            Console.WriteLine(otherList.ToString());
+            Console.ReadLine();
+        }
+        public void PopulateOther()
+        {
+            otherList.Add(5.27);
+            otherList.Add(6.38);
+            otherList.Add(7.49);
+            Console.ReadLine();
+        }
+        public void CheckOther()
+        {
+            Console.WriteLine(otherList.Count());
+            Console.ReadLine();
         }
     }
 }
