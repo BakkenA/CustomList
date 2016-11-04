@@ -25,14 +25,14 @@ namespace CustomListProject
             ////visualizer.CheckOther();
             ////visualizer.ShowStrings();
             visualizer.PopulateAnother();
-            visualizer.combinedList = visualizer.otherList + visualizer.anotherList;
-            visualizer.DisplayStrings();
-            visualizer.Hold();
-            visualizer.reducedList = visualizer.combinedList - visualizer.anotherList;
-            visualizer.ShowMeMore();
-            visualizer.Hold();
-            //BakkenList<int> one = new BakkenList<int>() { 1, 2, 3 };
-            //BakkenList<int> two = new BakkenList<int>() { 4, 5, 6 };
+            //visualizer.combinedList = visualizer.otherList + visualizer.anotherList;
+            visualizer.ShowStrings();
+            //visualizer.Hold();
+            //visualizer.reducedList = visualizer.combinedList - visualizer.anotherList;
+            //visualizer.ShowMeMore();
+            //visualizer.Hold();
+            visualizer.MergeMeNow();
+            visualizer.ShowStrings();
             //BakkenList<int> result;
             //result = one + two;
         }

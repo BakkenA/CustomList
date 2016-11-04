@@ -38,11 +38,8 @@ namespace CustomListProject
         {
             BakkenList<T> smallerArray = a1;
             for (int i = 0; i < a2.count; i++)
-            {
-                foreach (T item in a2)
-                {
-                    smallerArray.Remove(item);
-                }
+            {               
+                    smallerArray.Remove(a2.primeArray[i]);   
             }
             return smallerArray;
         }
@@ -114,9 +111,21 @@ namespace CustomListProject
             }
             return myStringBuilder.ToString();
         }//Ask an instructor about this.
-        public void Zipper()
+        public BakkenList<T> Zippering(BakkenList<T> a1)
         {
-
+            BakkenList<T> mergedList = new BakkenList<T>();
+            BakkenList<T> tempList = this;
+            int smallest = Math.Min(tempList.count, a1.count);
+            for (int i = 0; i < smallest; i++)
+            {
+                mergedList.Add(tempList.ReturnIndex(i));
+                mergedList.Add(a1.ReturnIndex(i));
+            }
+            return mergedList;
+        }
+        public T ReturnIndex(int index)
+        {
+            return primeArray[index];
         }
 
         public IEnumerator GetEnumerator()

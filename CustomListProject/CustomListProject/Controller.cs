@@ -81,6 +81,9 @@ namespace CustomListProject
             otherList.Add(527);
             otherList.Add(638);
             otherList.Add(749);
+            otherList.Add(7899);
+            otherList.Add(889);
+            otherList.Add(43333);
             Console.ReadLine();
         }
         public void CheckOther()
@@ -104,5 +107,11 @@ namespace CustomListProject
         {
             Console.WriteLine(reducedList.ToString());
         }
+        public void MergeMeNow()
+        {            
+            otherList=otherList.Zippering(anotherList);
+            Console.ReadLine();
+        }
+        
     }
 }
