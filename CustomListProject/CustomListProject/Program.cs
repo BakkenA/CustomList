@@ -11,30 +11,26 @@ namespace CustomListProject
         static void Main(string[] args)
         {
             Controller visualizer = new Controller();
-            ////visualizer.CheckFunctionality();
-            ////visualizer.CheckList();
-            ////visualizer.ReportIndex();
-            ////visualizer.ModifyList();
-            ////visualizer.CheckList();
-            ////visualizer.SeeCount();
-            ////visualizer.RemoveMany();
-            ////visualizer.SeeCount();
-            ////visualizer.CheckList();
-            ////visualizer.CheckIteration();
+            visualizer.CheckFunctionality();
+            visualizer.CheckList();
+            visualizer.ReportIndex();
+            visualizer.ModifyList();
+            visualizer.CheckList();
+            visualizer.SeeCount();
+            visualizer.RemoveMany();
+            visualizer.SeeCount();
+            visualizer.CheckList();
+            visualizer.CheckIteration();
             visualizer.PopulateOther();
-            ////visualizer.CheckOther();
-            ////visualizer.ShowStrings();
-            visualizer.PopulateAnother();
-            //visualizer.combinedList = visualizer.otherList + visualizer.anotherList;
+            visualizer.CheckOther();
             visualizer.ShowStrings();
-            //visualizer.Hold();
-            //visualizer.reducedList = visualizer.combinedList - visualizer.anotherList;
-            //visualizer.ShowMeMore();
-            //visualizer.Hold();
+            visualizer.PopulateAnother();
+            visualizer.combinedList = visualizer.otherList + visualizer.anotherList;
+            visualizer.ShowStrings();
+            visualizer.reducedList = visualizer.combinedList - visualizer.anotherList;
+            visualizer.ShowMeMore();
             visualizer.MergeMeNow();
             visualizer.ShowStrings();
-            //BakkenList<int> result;
-            //result = one + two;
         }
     }
 }

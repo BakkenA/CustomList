@@ -33,7 +33,6 @@ namespace CustomListProject
             }
             return comboArray;
         }
-
         public static BakkenList<T> operator -(BakkenList<T> a1, BakkenList<T> a2)
         {
             BakkenList<T> smallerArray = a1;
@@ -110,7 +109,7 @@ namespace CustomListProject
                 myStringBuilder.AppendFormat("{0} ", primeArray[i]);
             }
             return myStringBuilder.ToString();
-        }//Ask an instructor about this.
+        }
         public BakkenList<T> Zippering(BakkenList<T> a1)
         {
             BakkenList<T> mergedList = new BakkenList<T>();
@@ -127,7 +126,6 @@ namespace CustomListProject
         {
             return primeArray[index];
         }
-
         public IEnumerator GetEnumerator()
         {
             for (int i = 0; i < count; i++)

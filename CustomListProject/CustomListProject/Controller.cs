@@ -67,10 +67,6 @@ namespace CustomListProject
             }
             Console.ReadLine();
         }
-        public void Hold()
-        {
-            Console.ReadLine();
-        }
         public void ShowStrings()
         {
             Console.WriteLine(otherList.ToString());
