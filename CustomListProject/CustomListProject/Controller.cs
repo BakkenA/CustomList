@@ -9,7 +9,10 @@ namespace CustomListProject
     public class Controller
     {
         BakkenList<string> adamsList = new BakkenList<string>();
-        BakkenList<double> otherList = new BakkenList<double>();
+        public BakkenList<int> otherList = new BakkenList<int>();
+        public BakkenList<int> anotherList = new BakkenList<int>();
+        public BakkenList<int> combinedList = new BakkenList<int>();
+        public BakkenList<int> reducedList = new BakkenList<int>();
 
         public void CheckFunctionality()
         {
@@ -75,15 +78,31 @@ namespace CustomListProject
         }
         public void PopulateOther()
         {
-            otherList.Add(5.27);
-            otherList.Add(6.38);
-            otherList.Add(7.49);
+            otherList.Add(527);
+            otherList.Add(638);
+            otherList.Add(749);
             Console.ReadLine();
         }
         public void CheckOther()
         {
             Console.WriteLine(otherList.Count());
             Console.ReadLine();
+        }
+        public void PopulateAnother()
+        {
+            anotherList.Add(4);
+            anotherList.Add(3);
+            anotherList.Add(294);
+            anotherList.Add(183);
+        }
+        public void DisplayStrings()
+        {
+            Console.WriteLine(combinedList.ToString());
+            Console.ReadLine();
+        }
+        public void ShowMeMore()
+        {
+            Console.WriteLine(reducedList.ToString());
         }
     }
 }

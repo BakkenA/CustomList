@@ -9,16 +9,43 @@ namespace CustomListProject
 {
     public class BakkenList<T> : IEnumerable
     {
-        public StringBuilder myStringBuilder = new StringBuilder("This list contains: ");
+        
         public T[] primeArray;
-        public int capacity = 4;
+        public int capacity = 1;
         public int count = 0;
+        private static BakkenList<T> comboArray;
 
         public BakkenList()
         {
            T[] primeArray = new T[capacity];
         }
 
+        public static BakkenList<T> operator +(BakkenList<T> a1, BakkenList<T> a2)
+        {
+            comboArray = new BakkenList<T>();
+            foreach (T item in a1)
+            {
+                comboArray.Add(item);
+            }
+            foreach (T item in a2)
+            {
+                comboArray.Add(item);
+            }
+            return comboArray;
+        }
+
+        public static BakkenList<T> operator -(BakkenList<T> a1, BakkenList<T> a2)
+        {
+            BakkenList<T> smallerArray = a1;
+            for (int i = 0; i < a2.count; i++)
+            {
+                foreach (T item in a2)
+                {
+                    smallerArray.Remove(item);
+                }
+            }
+            return smallerArray;
+        }
         public void Add(T item)
         {
             T[] freshArray = new T[count+capacity];
@@ -80,23 +107,13 @@ namespace CustomListProject
         }
         public override string ToString()
         {
-            foreach (T item in primeArray)
+            StringBuilder myStringBuilder = new StringBuilder("This list contains: ");
+            for (int i = 0; i < count; i++)
             {
-                myStringBuilder.AppendFormat("{0:C} ",item);
+                myStringBuilder.AppendFormat("{0} ", primeArray[i]);
             }
             return myStringBuilder.ToString();
         }//Ask an instructor about this.
-        public static BakkenList<T> operator +(BakkenList<T> a1, BakkenList<T> a2)
-        {
-            BakkenList<T> comboArray = new BakkenList<T>();
-            return new BakkenList<T>();
-        }
-        public static BakkenList<T> operator -(BakkenList<T> a1, BakkenList<T> a2)
-        {
-            BakkenList<T> smallerArray = new BakkenList<T>();
-            
-            return new BakkenList<T>();
-        }
         public void Zipper()
         {
 
@@ -108,7 +125,6 @@ namespace CustomListProject
             {
                 yield return primeArray[i];
             }
-            yield return "End of List";
         }
     }
 }
